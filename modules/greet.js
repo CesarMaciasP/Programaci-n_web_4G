@@ -1,3 +1,3 @@
-let greet = () => console.log('Hola desde el modulo');
+let greet = () => console.log('Hola desde el modulo')
 
 greet();

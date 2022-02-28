@@ -1,1 +1,1 @@
-require('./greet')
+require('./greet');
