@@ -1,14 +1,24 @@
-var Emitter = require('./emitter');
+//var Emitter = require('./emitter');
+var Emitter = require('events');
+
+/* Usando el emisor de NODE JS el código sigue funcionando. Además, podemos observar las diferencias en la estructura del emisor cuando imprimos la variable "emtr" 
+casi al final del código*/
+
+const config = require('./config');
 
 var emtr = new Emitter();
 
-emtr.on('greet', () => {
+emtr.on(config.events.GREET, () => {
     console.log('Somewhere, someone said hello')
 });
 
-emtr.on ('greet', () => {
+emtr.on (config.events.GREET, () => {
     console.log('A greeting occurred');
 });
+
+/* Nuevamente el archivo se ejecuta correctamente con el cambio al incluir los "magic string". Con esto podemos agilizar el proceso 
+de escritura de código y reducir la posibilidad de cometer "typos", ya que como tal no escribiremos tanto manualmente
+si utilizamos el sistema de autocompletado de la notación de punto, o bine, sólo nos guiamos por las sugerencias del mismo */
 
 console.log('Hello');
 emtr.emit('greet')
