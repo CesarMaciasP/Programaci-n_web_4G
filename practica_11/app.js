@@ -2,6 +2,7 @@ var express = require('express');
 var app = express(); //Declaramos app de express
 
 var port = process.env.PORT || 3000; //Abrimos un puerto para el servidor
+
 app.use('/assets',express.static(__dirname + '/public'))
 
 //Primera ruta. Al nivel de la raíz
