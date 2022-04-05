@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link href="assets/style.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- En escencia, creamos una estructura condicional como en JS, pero usamos los tags de EJS para hacer que esta sólo muestre lo que es relevante para nosotros.-->
+
+        <% if(ID % 2 == 0 ){ %> <!-- Planteamos una condición para determinar si ID es par o impar -->
+        <ul>
+            <% for(let i = 0; i < ID*2; i++){ %> 
+             <li>Es par</li> <!-- Si es par, con un ciclo imprimiremos "Es par" el doble de veces que ID -->
+            <% } %>
+        </ul>
+        <% } else { %>
+        <ul>
+            <% for(let i = 0; i < ID; i++){ %>
+             <li>Es impar</li> <!-- Si es impar, se itera "Es impar" ID veces -->
+            <% } %>
+        </ul>
+        <% } %>
+
+
+    </body>
+</html>
