@@ -1,0 +1,38 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Person: <%= ID %></h1>
+    
+    <!--Utilizamos un switch en el que, al recibir uno de los mensajes válidos, cicla un for con el que imprime nuestro mensaje la misma cantidad de veces que de TIMES -->
+
+    <% switch (MSG) { case 'Bienvenido': %> 
+            <h2><%= MSG %>!</h2>
+             <% for (let i = 0; i < TIMES; i++) { %> 
+                <p>Bienvenido: <%= ID %></p>
+            <% } %>
+        <% break; %>
+        <% case 'Adios': %> 
+            <h2><%= MSG %>!</h2>
+            <% for (let i = 0; i < TIMES; i++) { %>
+                <p>Adios <%= ID %></p> 
+            <% } %>
+        <% break; %>
+        <% case 'Hola': %>
+            <h2><%= MSG %>!</h2>
+            <% for (let i = 0; i < TIMES; i++) { %>
+                <p>Hola <%= ID %></p>
+            <% } %>
+        <% break %>;
+        <% default: %>
+            <h2>Error: El mensaje no es valido o es inexistente</h2> 
+            <!-- Si el parametro de mensaje no coincide con los establecidos, indicamos un error.  -->
+        <% break; %>
+    <% }  %>
+</body>
+</html>
