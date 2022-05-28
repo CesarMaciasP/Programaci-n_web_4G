@@ -9,6 +9,10 @@ let Person = require('../models/person');
         res.render('person');
     });
 
+    router.get('/main', function(req, res){
+        res.render('main');
+    });
+
     router.post('/addPerson', function(req, res){
  
         const myPerson = new Person({
@@ -20,9 +24,9 @@ let Person = require('../models/person');
     });
 
     router.get('/persons', function(req,res,next) {
-      Person.find(function(err,person){
+      Person.find(function(err,persons){
           if(err) return next(err);
-          res.json(person);
+          res.render('personsIndex', {persons});
       });
   });
     
